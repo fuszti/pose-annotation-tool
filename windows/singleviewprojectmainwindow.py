@@ -224,6 +224,8 @@ class SingleviewProjectMainWindow(QMainWindow):
 			self.ui.spinBox.setValue((self.imageIdx + 1) % len(self.images))
 		elif event.key() == Qt.Key_B:
 			self.ui.spinBox.setValue((self.imageIdx + len(self.images) - 1) % len(self.images))
+		elif event.key() == Qt.Key_S:
+			self.data_pixel.to_csv(os.path.join(self.cfg.projectFolder, 'pixel-annotation-data.csv'))
 		elif event.key() == Qt.Key_J:
 			idx = (self.jointIdx + 1) % len(self.cfg.joints)
 			while True:
